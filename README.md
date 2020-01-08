@@ -8,8 +8,8 @@ Apparently data-structs and sorting algos.
 ## Lab(s?)
 Not sure if we have labs in this class but I'll make a subdir just in case.
 
-##PEX
+## PEX
 seriously what the hell does PEX stand for?
 
-##Homework(?)
+## Homework(?)
 I guess I'll upload homework to the repo too.
