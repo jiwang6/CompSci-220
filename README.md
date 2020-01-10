@@ -5,13 +5,14 @@ Apparently data-structs and sorting algos.
 
 >Bogo sort has potential to have O(0).
 
-## Lab(s?)
-Not sure if we have labs in this class but I'll make a subdir just in case.
+## Projects
+Visual Studio is kinda wack but we'll make does
+
+### BinSearch
+Binary search algo for intro to like runtime and stuff like that.
 
 ## PEX
 seriously what the hell does PEX stand for?
 
 ## Homework(?)
 I guess I'll upload homework to the repo too.
-
-## Hi Maddy
