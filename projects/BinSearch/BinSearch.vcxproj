@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{41950BAB-B866-4623-B173-E2184B8EC29F}</ProjectGuid>
+    <ProjectGuid>{B2D16ACA-0DDE-4EDF-9BDC-737C87AA9AA0}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>BinSearch</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
@@ -147,7 +147,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\Downloads\listADT.c" />
     <ClCompile Include="BinSearch.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Downloads\iterativeBinarySearch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
