@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{B2D16ACA-0DDE-4EDF-9BDC-737C87AA9AA0}</ProjectGuid>
+    <ProjectGuid>{F9C0DAB5-20FD-48F1-BDB1-CF3E3911F462}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>BinSearch</RootNamespace>
+    <RootNamespace>listADTImp</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -147,11 +147,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Downloads\listADT.c" />
-    <ClCompile Include="BinSearch.c" />
+    <ClCompile Include="listADT.c" />
+    <ClCompile Include="listADTImp.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Downloads\iterativeBinarySearch.h" />
+    <ClInclude Include="listADT.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

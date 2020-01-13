@@ -24,8 +24,9 @@ int Prepend(list *L, int X) {
 	return 1;
 }
 
-int insertAfter(list *L, int W, int X) {
-
+int insertAfter(list *L, int W, int X) { 
+	
+	return L;
 }
 
 int removeItem(list *L, int X) {

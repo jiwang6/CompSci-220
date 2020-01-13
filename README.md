@@ -9,8 +9,8 @@ Apparently data-structs and sorting algos.
 ## Projects
 Visual Studio is kinda wack but we'll make do
 
-### BinSearch
-Binary search algo for intro to like runtime and stuff like that.
+### listADTImp
+Figuring out Visual Studio, relearning pointers and data-structs, and writing some jank search algos.
 
 ## PEX
 seriously what the hell does PEX stand for?
