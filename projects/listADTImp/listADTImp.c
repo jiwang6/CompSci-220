@@ -1,15 +1,20 @@
 #include "listADT.h"
 
 int main() {
-    printf("ah //merde//, here we go again\n");
+    //printf("ah ____, here we go again\n");
 
     list userNums = createList();
 
-    if (!append(&userNums, 8))
-        printf("error in append \n");
+    for (int i = 0; i < 6; i++) // 0 1 2 3 4 5
+        append(&userNums, i);
+    for(int i = 0; i < userNums.size; i++) // check array vals
+        printf("%d", userNums.items[i]);
 
-    printf("%d\n", userNums.items[0]);
+    printf("\n%d", binarySearch(userNums, 30));
 
+
+
+    //insertAfter(&userNums, 2, 8);
     /* 
     // testing/reviewing pointers because I have the memory of a turnip
 

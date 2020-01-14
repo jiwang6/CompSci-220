@@ -25,8 +25,14 @@ int Prepend(list *L, int X) {
 }
 
 int insertAfter(list *L, int W, int X) { 
-	
-	return L;
+	if (L->size < MAX) {
+		L->size++;
+		for (int i = L->size - 1; i > W; i--)
+			L->items[i] = L->items[i - 1];
+		L->items[W] = X;
+		return 1;
+	}
+	return 0;
 }
 
 int removeItem(list *L, int X) {
@@ -39,14 +45,39 @@ int removeItem(list *L, int X) {
 	return removed;
 }
 
-int linearSearch(list L, int X) {
-
+int linearSearch(list L, int X) { // done
+	for (int i = 0; i < L.size; i++) {
+		if (L.items[i] == X) {
+			return 1;
+		}
+	}
 	return 0;
 }
 
 
 int binarySearch(list L, int X) {
+	int min = 0;
+	int max = L.size - 1;
 
+	int mid = (max + min)/ 2;
+	// printf("\n%d", mid);
+
+	while (L.items[mid] != X) {
+		if (L.items[mid] > X) {
+			max = mid;
+			mid = (0 + max) / 2;
+		}
+		if (L.items[mid] < X) {
+			min = mid;
+			mid = (min + max) / 2;
+		}
+
+		if (L.items[mid] == X)
+			return 1;
+		if (max == min + 1)
+			break;
+	}
+	
 	return 0;
 }
 
