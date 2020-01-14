@@ -12,6 +12,9 @@ Visual Studio is kinda wack but we'll make do
 ### listADTImp
 Figuring out Visual Studio, relearning pointers and data-structs, and writing some jank search algos.
 
+### Debugger
+Playing with VS Debugger. I really should pay attention during class.
+
 ## PEX
 seriously what the hell does PEX stand for?
 
