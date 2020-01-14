@@ -58,9 +58,8 @@ int linearSearch(list L, int X) { // done
 int binarySearch(list L, int X) {
 	int min = 0;
 	int max = L.size - 1;
-
 	int mid = (max + min)/ 2;
-	// printf("\n%d", mid);
+	
 
 	while (L.items[mid] != X) {
 		if (L.items[mid] > X) {
