@@ -23,8 +23,7 @@ const char DATA_FILE[] = "numbers.dat";	/* File with numbers */
 int data[MAX_NUMBERS];	/* Array of numbers to search */
 int max_count;		/* Number of valid elements in data */
 
-int main()
-{
+int main() {
     FILE* in_file;	/* Input file */
     int	middle;		/* Middle of our search range */
     int low, high;	/* Upper/lower bound */
@@ -47,7 +46,7 @@ int main()
             break;
 
         /* convert number */
-        sscanf(line, "%d", &data[max_count]);
+        sscanf(line, "%d", &data[max_count]); // added pointer thing
         ++max_count;
     }
 
@@ -67,7 +66,7 @@ int main()
 
             if (data[middle] == search) {
                 printf("Found at index %d\n", middle);
-                break;
+                break; // added a break here? idk
             }
 
             if (low == high) {
