@@ -16,14 +16,16 @@
  ****************************************************************/
 
 #include <stdio.h>
+
 #define MAX_NUMBERS	 1000	/* Max numbers in file */
 
-const char DATA_FILE[] = "numbers.dat";	/* File with numbers */
 
-int data[MAX_NUMBERS];	/* Array of numbers to search */
-int max_count;		/* Number of valid elements in data */
 
 int main() {
+    const char DATA_FILE[] = "numbers.dat";	/* File with numbers */
+
+    int data[MAX_NUMBERS];	/* Array of numbers to search */
+    int max_count;		/* Number of valid elements in data */
     FILE* in_file;	/* Input file */
     int	middle;		/* Middle of our search range */
     int low, high;	/* Upper/lower bound */
@@ -69,7 +71,7 @@ int main() {
                 break; // added a break here? idk
             }
 
-            if (low == high) {
+            if (middle == high || low == middle) {
                 printf("Not found\n");
                 break;
             }
