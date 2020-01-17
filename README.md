@@ -15,6 +15,9 @@ Figuring out Visual Studio, relearning pointers and data-structs, and writing so
 ### Debugger
 Playing with VS Debugger. I really should pay attention during class.
 
+### Bowling Game
+I honestly don't know this lab is.
+
 ## PEX
 seriously what the hell does PEX stand for?
 
