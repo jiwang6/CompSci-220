@@ -65,10 +65,15 @@ static void test_perfect_game()
 
 int main()
 {
-	assert(false && "My first unit test.");
+	assert(true && "My first unit test.");
 	//	test_gutter_game();
+	
 	//	test_all_ones();
+	
 	//	test_one_spare();
+	
 	//	test_one_strike();
+	
 	//	test_perfect_game();
+
 }
