@@ -12,6 +12,8 @@
 #include <time.h>
 #include "lab09.h"
 
+// TODO: fix pass display functionality
+
 // Local function prototypes
 void fillArray(int array[]);
 void swap(int *x, int *y);

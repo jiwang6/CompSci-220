@@ -1,25 +1,12 @@
-# CompSci-220
-Labs n' Stuff for CS 220
 
-## About CS 220
-Apparently data-structs and sorting algos. 
-
->Bogo sort has potential to have O(0).
+# CompSci 220
+Reference repo for CompSci 220, Data Structures and Stuff (I can't remember the actual course title or description)
 
 ## Projects
-Visual Studio is kinda wack but we'll make do
+Buncha implementations for sorts, ADTs, and more! Most stuff in here is super jank but I love it, like how my parents love me despite me going to a godforsaken military academy.
 
-### listADTImp
-Figuring out Visual Studio, relearning pointers and data-structs, and writing some jank search algos.
+### Sorts
+Hopefully all these algo's will sort my life out. No perm/bogo sort so I'm clinically depressed.
 
-### Debugger
-Playing with VS Debugger. I really should pay attention during class.
-
-### Bowling Game
-I honestly don't know this lab is.
-
-## PEX
-seriously what the hell does PEX stand for?
-
-## Homework(?)
-I guess I'll upload homework to the repo too.
+### ADTs
+The only thing abstract about these datatypes is the amount of time I spent on them. I honestly need to gather myself before I get a B in a major's class.
