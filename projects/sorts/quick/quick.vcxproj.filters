@@ -15,15 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="listADTImp.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="listADT.c">
+    <ClCompile Include="lab09.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="listADT.h">
+    <ClInclude Include="lab09.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

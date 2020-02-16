@@ -16,19 +16,25 @@
 void fillArray(int array[]);
 void swap(int* x, int* y);
 void Merge(int array[], int lBound, int mid, int rBound);
-void print(int nums[], int n);
+void print(int nums[]);
 
 int main() {
-    int nums[N];
+
+    int nums[] = {12,7,28,2,10,4,42,8};
 
      /* TASK 0 - implement the function, mergeSort() below
       *  Help - the merge prototype is given to you above
       */
-    fillArray(nums);
-    print(nums, N);
+    // fillArray(nums);
+    // print(nums, N);
 
-    MergeSort(nums,0,N-1);
-    print(nums, N);
+    print(nums);
+    printf("\n");
+
+    MergeSort(nums,0,n-1);
+    
+    printf("\n");
+    print(nums);
 
     return 0;
 }
@@ -90,6 +96,7 @@ void MergeSort(int numbers[], int lBound, int rBound) {
         MergeSort(numbers, m + 1, rBound); // call sort on second half
 
         Merge(numbers, lBound, m, rBound); // merge first and second halves
+        print(numbers);
     }
 }
 
@@ -118,14 +125,20 @@ void fillArray(int array[]) {
     */
 
     // fill array with random ints from 0 to 99
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < n; i++) {
         array[i] = (int) rand() % 100;
     }
 }
 
-void print(int nums[],int n) {
-    for (int i=0;i<n;i++) {
-        printf("%d ",nums[i]);
+void print(int nums[]) {
+    printf("{");
+    for (int i = 0; i < n; i++) {
+        if (i < n - 1) {
+            printf("%d, ", nums[i]);
+        }
+        else {
+            printf("%d}", nums[i]);
+        }
     }
     printf("\n");
 }

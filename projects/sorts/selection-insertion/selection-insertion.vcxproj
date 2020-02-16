@@ -18,11 +18,17 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lab06.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lab06.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{EC5E8841-90AC-46A8-9DD4-0D374A2AAC35}</ProjectGuid>
+    <ProjectGuid>{9F68426F-49C2-4E05-8CBB-F1CF657FC4C3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>bowlinggametest</RootNamespace>
+    <RootNamespace>selectioninsertion</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -146,13 +152,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="bowling_game.c" />
-    <ClCompile Include="bowling_game_test.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="bowling_game.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
