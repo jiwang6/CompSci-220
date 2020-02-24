@@ -19,17 +19,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="listAsLinkedList.h" />
+    <ClCompile Include="listAsLinkedList.c" />
+    <ClCompile Include="queueAsLinkedList.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="listAsLinkedList.c" />
-    <ClCompile Include="main.c" />
+    <ClInclude Include="listAsLinkedList.h" />
+    <ClInclude Include="queueAsLinkedList.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{B19A1C05-B4BE-41FD-9120-BF0BD31E008C}</ProjectGuid>
+    <ProjectGuid>{7C193CFF-BC88-44A6-8126-A2534F8A4ED6}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>singleList</RootNamespace>
+    <RootNamespace>queue</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

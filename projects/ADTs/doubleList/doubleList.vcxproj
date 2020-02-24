@@ -19,17 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="listAsLinkedList.h" />
+    <ClCompile Include="listAsDoubleLinkedList.c" />
+    <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="listAsLinkedList.c" />
-    <ClCompile Include="main.c" />
+    <ClInclude Include="listAsDoubleLinkedList.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{B19A1C05-B4BE-41FD-9120-BF0BD31E008C}</ProjectGuid>
+    <ProjectGuid>{C639A753-3582-4215-B713-CB341EF68B85}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>singleList</RootNamespace>
+    <RootNamespace>doubleList</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

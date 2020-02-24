@@ -10,20 +10,6 @@
 #include <stdlib.h>
 #include "listAsLinkedList.h"
 
-//int main() {
-//    printf("build passed \n");
-//
-//    LinkedList *testList = createLinkedList();
-//    appendElementLinkedList(testList, 5);
-//
-//    printf("%d", lengthOfLinkedList(testList));
-//
-//    deleteLinkedList(testList);
-//
-//    return 0;
-//}
-
-
 Node * findSmallest(Node *firstNode);
 void swapData(Node * j, Node * k);
 
@@ -51,6 +37,7 @@ void deleteLinkedList(LinkedList* list) {
     }
     free(list);
 }
+
 void appendElementLinkedList(LinkedList* list, int element) {
     // create a new node on the heap as values on the stack
     // are free'd when the function ends
@@ -65,10 +52,10 @@ void appendElementLinkedList(LinkedList* list, int element) {
         list->head = newNode;
     // list is not empty append node using tail ptr
     } else {
-        list->tail->next = newNode;
+        list->tail->next = newNode; // link to list
 
     }
-    list->tail = newNode;
+    list->tail = newNode; // define new end of list
     list->numberOfElements++;
 }
 
