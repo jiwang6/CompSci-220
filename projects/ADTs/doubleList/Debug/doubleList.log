@@ -1,0 +1,5 @@
+﻿  listAsDoubleLinkedList.c
+  main.c
+C:\Users\jimzw\Documents\CompSci-220\projects\ADTs\doubleList\main.c(4,8): warning C4013: 'printf' undefined; assuming extern returning int
+  Generating Code...
+  doubleList.vcxproj -> C:\Users\jimzw\Documents\CompSci-220\projects\ADTs\Debug\doubleList.exe

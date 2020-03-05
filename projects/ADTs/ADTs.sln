@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "queue", "queue\queue.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "doubleList", "doubleList\doubleList.vcxproj", "{C639A753-3582-4215-B713-CB341EF68B85}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bst", "bst\bst.vcxproj", "{A23E5347-7E12-4DB1-B7F9-28FD349E82CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{C639A753-3582-4215-B713-CB341EF68B85}.Release|x64.Build.0 = Release|x64
 		{C639A753-3582-4215-B713-CB341EF68B85}.Release|x86.ActiveCfg = Release|Win32
 		{C639A753-3582-4215-B713-CB341EF68B85}.Release|x86.Build.0 = Release|Win32
+		{A23E5347-7E12-4DB1-B7F9-28FD349E82CE}.Debug|x64.ActiveCfg = Debug|x64
+		{A23E5347-7E12-4DB1-B7F9-28FD349E82CE}.Debug|x64.Build.0 = Debug|x64
+		{A23E5347-7E12-4DB1-B7F9-28FD349E82CE}.Debug|x86.ActiveCfg = Debug|Win32
+		{A23E5347-7E12-4DB1-B7F9-28FD349E82CE}.Debug|x86.Build.0 = Debug|Win32
+		{A23E5347-7E12-4DB1-B7F9-28FD349E82CE}.Release|x64.ActiveCfg = Release|x64
+		{A23E5347-7E12-4DB1-B7F9-28FD349E82CE}.Release|x64.Build.0 = Release|x64
+		{A23E5347-7E12-4DB1-B7F9-28FD349E82CE}.Release|x86.ActiveCfg = Release|Win32
+		{A23E5347-7E12-4DB1-B7F9-28FD349E82CE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

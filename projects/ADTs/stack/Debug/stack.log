@@ -1,0 +1,3 @@
+﻿  stackAsLinkedList.c
+C:\Users\jimzw\Documents\CompSci-220\projects\ADTs\stack\stackAsLinkedList.c(11,11): warning C4013: 'printf' undefined; assuming extern returning int
+  stack.vcxproj -> C:\Users\jimzw\Documents\CompSci-220\projects\ADTs\Debug\stack.exe
