@@ -1,4 +1,4 @@
-/** listAsDoubleLinkedList.h
+/** listAsDoubleLinkedList.c
 * ================================================================
 * Name: Troy Weingart
 * Section: n/a
