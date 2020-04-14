@@ -19,15 +19,15 @@ QueueAsLinkedList* queueInit();
 
 /** queueEnqueue() - inserts element at top (back) of queue
  * @param queue - ptr to queue struct
- * @param element - double variable to be put into queue
+ * @param element - char* variable to be put into queue
  */
-void queueEnqueue(QueueAsLinkedList* queue, double element);
+void queueEnqueue(QueueAsLinkedList* queue, char* element);
 
 /** queueDequeue() - removes elemt from bottom (front) of queue
  * @param queue - ptr to queue structure
- * @return - the bottom double value of queue datastruct
+ * @return - the bottom char* value of queue datastruct
  */
-double queueDequeue(QueueAsLinkedList* queue);
+char* queueDequeue(QueueAsLinkedList* queue);
 
 /** queueIsEmpty() - returns if queue is empty or not
  * @param queue - ptr to queue struct
@@ -45,7 +45,7 @@ bool queueIsFull(QueueAsLinkedList* queue);
  * @param queue - ptr to queue struct
  * @return - the item on the bottom of the queue
  */
-double queuePeek(QueueAsLinkedList* queue);
+char* queuePeek(QueueAsLinkedList* queue);
 
 /** queueSize() - returns size of queue
  * @param queue - ptr to queue struct

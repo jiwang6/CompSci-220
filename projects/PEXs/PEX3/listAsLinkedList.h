@@ -11,10 +11,11 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 // Define a node of the linked list
 typedef struct node {
-    double data;
+    char data[10];
     struct node* next;
 } Node;
 
@@ -36,9 +37,9 @@ void deleteLinkedList(LinkedList* list);
 
 /** appenedElementLinkedList() - appends element to ll structure
  * @param list - ptr to ll structure
- * @param element - double element to be appeneded
+ * @param element - char*  element to be appeneded
  */
-void appendElementLinkedList(LinkedList* list, double element);
+void appendElementLinkedList(LinkedList* list, char* element);
 
 /** lengthOfLinkedList() - returns lenth of ll structure
  * @param list - ptr to ll structure
@@ -56,14 +57,14 @@ void printLinkedList(LinkedList* list);
  * @param position - position of element requested
  * @return - element of linked list requested, -1 if index doesn't exist
  */
-double getElementLinkedList(LinkedList* list, int position);
+char*  getElementLinkedList(LinkedList* list, int position);
 
 /** changeElementLinkedList() - changes element value for position specified
  * @param list - ptr to ll struct
  * @param position - index of element to be replaced
- * @param newElement - new double value to go into position
+ * @param newElement - new char*  value to go into position
  */
-void changeElementLinkedList(LinkedList* list, int position, double newElement);
+void changeElementLinkedList(LinkedList* list, int position, char* newElement);
 
 
 /** deleteElementLinkedList() - deletes element at the position specified
@@ -75,32 +76,15 @@ void deleteElementLinkedList(LinkedList* list, int position);
 /** insertElementLinkedList() - inserts new element into ll struct @ position specified
  * @param list - ptr to ll struct
  * @param position - index of element new value will be inserted into
- * @param element - new double value to go into position
+ * @param element - new char*  value to go into position
  */
-void insertElementLinkedList(LinkedList* list, int position, double element);
+void insertElementLinkedList(LinkedList* list, int position, char* element);
 
 /** findElementLinkedList() - finds position of element specified
  * @param list - ptr to ll struct
  * @param element - element value to be found
  */
-int findElementLinkedList(LinkedList* list, double element);
-
-
-/** selSortLinkedList - performs selection sort on ll struct
- * @param list - ptr to ll struct
- */
-void selSortLinkedList(LinkedList *list);
-
-/** insertSortLinkedList - performs insertion sort on ll struct
- * @param list - ptr to ll struct
- */
-void insertSortLinkedList(LinkedList* list);
-
-/** findSmallest() - finds smallest element in ll struct
- * @param firstNode - ptr to first node struct in ll struct
- * @return - node struct for smallest element in ll struct
- */
-Node* findSmallest(Node* firstNode);
+int findElementLinkedList(LinkedList* list, char* element);
 
 /** swapData() - swaps data in two specified nodes
  * @param j - first node of data to be swapped

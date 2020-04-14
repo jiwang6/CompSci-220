@@ -8,8 +8,6 @@
 * =================================================================
 */
 
-// comment for 13 apr sup sam
-
 #include "listAsLinkedList.h"
 
 LinkedList* createLinkedList() {
@@ -33,9 +31,9 @@ void deleteLinkedList(LinkedList* list) {
     free(list);
 }
 
-void appendElementLinkedList(LinkedList* list, double element) {
+void appendElementLinkedList(LinkedList* list, char* element) {
     Node* newNode = malloc(sizeof(Node));
-    newNode->data = element;
+    strcpy(newNode->data, element);
     newNode->next = NULL;
 
     if (list->head == NULL) {
@@ -55,15 +53,15 @@ int lengthOfLinkedList(LinkedList* list) {
 void printLinkedList(LinkedList* list) {
     Node* tempPtr = list->head;
     while (tempPtr != NULL) {
-        printf("%lf -> ", tempPtr->data);
+        printf("%s -> ", tempPtr->data);
         tempPtr = tempPtr->next;
     }
     printf("NULL\n");
 }
 
-double getElementLinkedList(LinkedList* list, int position) {
+char* getElementLinkedList(LinkedList* list, int position) {
     if (list->numberOfElements == 0 || list->numberOfElements <= position) {
-        return -1;
+        return "n/a";
     }
     int curPos = 0;
     Node* tempPtr = list->head;
@@ -102,17 +100,17 @@ void deleteElementLinkedList(LinkedList* list, int position) {
         prevPtr->next = tempPtr->next;
     }
     list->numberOfElements--;
-    free(tempPtr);
+    free(tempPtr); // issue here, freeing char pointer where we still need
 }
 
-void insertElementLinkedList(LinkedList* list, int position, double element) {
+void insertElementLinkedList(LinkedList* list, int position, char* element) {
     if (list->numberOfElements < position) {
         printf("Error\n");
         exit(0);
     }
 
     Node* newNode = malloc(sizeof(Node));
-    newNode->data = element;
+    strcpy(newNode->data, element);
     newNode->next = NULL;
 
     int curPos = 0;
@@ -139,7 +137,7 @@ void insertElementLinkedList(LinkedList* list, int position, double element) {
 
 }
 
-void changeElementLinkedList(LinkedList* list, int position, double newElement) {
+void changeElementLinkedList(LinkedList* list, int position, char* newElement) {
     if (list->numberOfElements == 0 || list->numberOfElements <= position) {
         printf("Error\n");
         exit(0);
@@ -152,10 +150,10 @@ void changeElementLinkedList(LinkedList* list, int position, double newElement) 
         curPos++;
         tempPtr = tempPtr->next;
     }
-    tempPtr->data = newElement;
+    strcpy(tempPtr->data, newElement);
 }
 
-int findElementLinkedList(LinkedList* list, double element) {
+int findElementLinkedList(LinkedList* list, char* element) {
     int curPos = 0;
     Node* tempPtr = list->head;
 
@@ -169,55 +167,8 @@ int findElementLinkedList(LinkedList* list, double element) {
     return -1;
 }
 
-void insertSortLinkedList(LinkedList* list) {
-    double insertElem;
-    Node* tempPtr = list->head->next;
-    Node* tempPrevPtr = list->head;
-    Node* insPtr;
-    Node* insPrevPtr = list->head;
-    while (tempPtr != NULL) {
-        insertElem = tempPtr->data;
-        insPtr = list->head;
-        while (insPtr->data < insertElem && insPtr != tempPtr) {
-            insPrevPtr = insPtr;
-            insPtr = insPtr->next;
-        }
-        if (insPtr != tempPtr) {
-            tempPrevPtr->next = tempPtr->next;
-            tempPtr->next = insPtr;
-            insPrevPtr->next = tempPtr;
-            if (insPtr == list->head)
-                list->head = insPtr;
-        }
-        tempPrevPtr = tempPtr;
-        tempPtr = tempPtr->next;
-    }
-}
-
-void selSortLinkedList(LinkedList *list) {
-    Node* tempPtr = list->head;
-    Node* nodeWithSmallest;
-    while (tempPtr != NULL) {
-        nodeWithSmallest = findSmallest(tempPtr);
-        swapData(tempPtr, nodeWithSmallest);
-        tempPtr = tempPtr->next;
-    }
-} 
-
-Node * findSmallest(Node *firstNode) {
-    Node * nodeWithSmallest = firstNode;
-    Node * nodePtr = firstNode;
-    while (nodePtr != NULL) {
-        if (nodePtr->data < nodeWithSmallest->data) {
-            nodeWithSmallest = nodePtr;
-        }
-        nodePtr = nodePtr->next;
-    }
-    return nodeWithSmallest;
-}
-
 void swapData(Node * j, Node * k) {
-    double temp = j->data;
-    j->data = k->data;
-    k->data = temp;
+    char* temp = j->data;
+    strcpy(j->data, k->data);
+    strcpy(k->data, temp);
 }

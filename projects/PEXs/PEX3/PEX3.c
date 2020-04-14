@@ -18,6 +18,43 @@
 
 
 int main(void) {
+
+	LinkedList* list =  createLinkedList();
+
+	appendElementLinkedList(list, "12");
+
+	printLinkedList(list);
+	
+
+	StackAsLinkedList* stack = stackInit();
+
+	stackPush(stack, "fuck");
+	stackPush(stack, "this");
+	stackPush(stack, "pex");
+	stackPush(stack, "1/2");
+
+
+	stackPrint(stack);
+
+
+	printf("%s\n", stackPop(stack));
+	stackPrint(stack);
+
+	QueueAsLinkedList* queue = queueInit();
+
+	queueEnqueue(queue, "bruh");
+	queueEnqueue(queue, "uh");
+	queueEnqueue(queue, "ree");
+	queueEnqueue(queue, "3.14/qtpie");
+
+	queuePrint(queue);
+	printf("%s\n", queueDequeue(queue));
+
+
+
+	queuePrint(queue);
+
+	/*
 	char* infix = malloc(51 * sizeof(char)); // create input buffer
 	printf("enter your godforsaken expression: \n");
 
@@ -67,6 +104,8 @@ int main(void) {
 
 	deleteLinkedList(opStack);
 	deleteLinkedList(opQueue);
+
+	*/
 	/*
 	// print to buffer to check good
 	printf("input buffer:\n");

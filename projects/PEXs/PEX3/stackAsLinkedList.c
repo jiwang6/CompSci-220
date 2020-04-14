@@ -10,15 +10,17 @@
 
 #include "stackAsLinkedList.h"
 
-void stackPush(StackAsLinkedList* stack, double element) {
+void stackPush(StackAsLinkedList* stack, char* element) {
     appendElementLinkedList(stack,element);
 }
 
-double stackPop(StackAsLinkedList* stack) {
+char* stackPop(StackAsLinkedList* stack) {
     int elemPos = lengthOfLinkedList(stack)-1;
-    double elem = getElementLinkedList(stack,elemPos);
-    deleteElementLinkedList(stack,elemPos);
-    return elem;
+    char* elem = getElementLinkedList(stack, elemPos);
+    char* temp = malloc(10 * sizeof(char));
+    strcpy(temp, elem);
+    deleteElementLinkedList(stack, elemPos);
+    return temp;
 }
 
 bool stackIsEmpty(StackAsLinkedList* stack) {
@@ -36,7 +38,7 @@ StackAsLinkedList* stackInit() {
     return createLinkedList();
 }
 
-double stackPeek(StackAsLinkedList* stack) {
+char* stackPeek(StackAsLinkedList* stack) {
     return getElementLinkedList(stack, lengthOfLinkedList(stack)-1);
 }
 

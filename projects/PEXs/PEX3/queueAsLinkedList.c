@@ -14,14 +14,16 @@ QueueAsLinkedList* queueInit() {
     return createLinkedList();
 }
 
-void queueEnqueue(QueueAsLinkedList* queue, double element) {
+void queueEnqueue(QueueAsLinkedList* queue, char* element) {
     appendElementLinkedList(queue, element);
 }
 
-double queueDequeue(QueueAsLinkedList* queue) {
-    double elem = getElementLinkedList(queue, 0);
+char* queueDequeue(QueueAsLinkedList* queue) {
+    char* elem = getElementLinkedList(queue, 0);
+    char* temp = malloc(10 * sizeof(char));
+    strcpy(temp, elem);
     deleteElementLinkedList(queue, 0);
-    return elem;
+    return temp;
 }
 
 bool queueIsEmpty(QueueAsLinkedList* queue) {
@@ -35,7 +37,7 @@ bool queueIsFull(QueueAsLinkedList* queue) {
     return false;
 }
 
-double queuePeek(QueueAsLinkedList* queue) {
+char* queuePeek(QueueAsLinkedList* queue) {
     return getElementLinkedList(queue, 0);
 }
 

@@ -22,13 +22,13 @@ StackAsLinkedList* stackInit();
  * @param element - element to be put into structure
  * @return - 1 if successful, -1 if not
  */
-void stackPush(StackAsLinkedList* stack, double element);
+void stackPush(StackAsLinkedList* stack, char* element);
 
 /** stackPop() - pops an element off top of stack
  * @param stack - ptr to stack struct
- * @return - double stack element pushed off top
+ * @return - char* stack element pushed off top
  */
-double stackPop(StackAsLinkedList* stack);
+char* stackPop(StackAsLinkedList* stack);
 
 /** stackIsEmpty() - returns whether stack is empty
  * @param stack - ptr to stack struct
@@ -46,7 +46,7 @@ bool stackIsFull(StackAsLinkedList* stack);
  * @param stack - ptr to stack struct
  * @return - element at top of stack
  */
-double stackPeek(StackAsLinkedList* stack);
+char* stackPeek(StackAsLinkedList* stack);
 
 /** stackSize() - returns size of stack
  * @param stack - ptr to stack struct
