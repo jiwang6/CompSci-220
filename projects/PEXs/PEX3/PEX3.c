@@ -10,6 +10,7 @@
 * ===========================================================
 */
 
+// put ascii codes for numbers into ADTs
 
 #include "mathFuncts.h"
 #include "shuntingAlgo.h"
@@ -17,10 +18,98 @@
 
 
 int main(void) {
-	printf("ok this whole remote learning thing is pretty wack\n");
+	char* infix = malloc(51 * sizeof(char)); 
+	printf("enter your godforsaken expression: \n");
 
-	// stack test
+	//scanf("%s", infix);
+
+	fgets(infix, 50, stdin);
+
+	char* temp1 = infix;
+
+	StackAsLinkedList* operators = stackInit();
+	QueueAsLinkedList* operands = queueInit();
+
+	// print input buffer
+	while (*temp1) { // iterate through every character
+
+		printf("%c", *temp1);
+
+		temp1++;
+	}
+
+	temp1 = infix;
+
+	printf("\n");
+
+	// blind sort into stack and queue
+	while (*temp1) { // iterate through every character
+		if (isdigit(*temp1) || ((*temp1 == '-' || *temp1 == '+') && isdigit(*(temp1 + 1)))) {
+			// Found a number
+			int val = strtol(temp1, &temp1, 10); // Read number
+			char valc[30];
+			sprintf(valc, "%c", val);
+			queueEnqueue(operands, *valc);
+		} else if (*temp1 != ' ') {
+			stackPush(operators, *temp1);
+		}
+	temp1++;
+	}
+	
+	// print out ADTs
+	printf("operator stack:\n");
+	stackPrint(operators);
+	printf("operand queue:\n");
+	queuePrint(operands);
+
+	// shove stack onto queue
+	while (!stackIsEmpty(operators)) {
+		queueEnqueue(operands, stackPop(operators));
+	}
+
+	// print out ADTs
+	printf("operator stack:\n");
+	stackPrint(operators);
+	printf("output queue:\n");
+	queuePrint(operands);
+
+	double* postfix = malloc(51 * sizeof(double));
+	double* temp2 = postfix;
+
+	while (!queueIsEmpty(operands)) { // while queue is not empty
+		*temp2 = queueDequeue(operands); // load values into temp2
+		temp2++;
+	}
+
+	*temp2 = '\0';
+
+	temp2 = postfix;
+
+	// print rpn
+	printf("\nrpn:\n");
+
+	while (*temp2) { // iterate through every character
+		if (1) { // if long
+			printf("%lf0 ", *temp2);
+		} else {
+			printf("%c ", (char)*temp2);
+		}
+
+		temp2++;
+	}
+
+
+	free(infix);
+	free(postfix);
+
+	deleteLinkedList(operators);
+	deleteLinkedList(operands);
+
+	
+
 	/*
+	// stack test
+	
 	StackAsLinkedList * s = stackInit();
 	
 	if (stackIsEmpty(s))
@@ -66,9 +155,10 @@ int main(void) {
 	queuePrint(q);
 	printf("queue has %d nodes\n", queueSize(q));
 	printf("front element: %lf\n", queuePeek(q));
-	*/
 	
-	printf("%lf", mathPowe(2, 3));
+	
+	printf("%lf", mathPow(2, 3));
+	*/
 
 	return 0;
 }
