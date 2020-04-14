@@ -1,2 +1,5 @@
 ﻿  PEX3.c
+C:\Users\jimzw\Documents\CompSci-220\projects\PEXs\PEX3\PEX3.c(45,16): warning C4013: 'strtok' undefined; assuming extern returning int
+C:\Users\jimzw\Documents\CompSci-220\projects\PEXs\PEX3\PEX3.c(45,30): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
+C:\Users\jimzw\Documents\CompSci-220\projects\PEXs\PEX3\PEX3.c(56,30): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
   PEX3.vcxproj -> C:\Users\jimzw\Documents\CompSci-220\projects\PEXs\PEX3\Debug\PEX3.exe

@@ -8,6 +8,8 @@
 * =================================================================
 */
 
+// comment for 13 apr sup sam
+
 #include "listAsLinkedList.h"
 
 LinkedList* createLinkedList() {
@@ -200,7 +202,7 @@ void selSortLinkedList(LinkedList *list) {
         swapData(tempPtr, nodeWithSmallest);
         tempPtr = tempPtr->next;
     }
-}
+} 
 
 Node * findSmallest(Node *firstNode) {
     Node * nodeWithSmallest = firstNode;

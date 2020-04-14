@@ -18,20 +18,59 @@
 
 
 int main(void) {
-	char* infix = malloc(51 * sizeof(char)); 
+	char* infix = malloc(51 * sizeof(char)); // create input buffer
 	printf("enter your godforsaken expression: \n");
 
-	//scanf("%s", infix);
+	//scanf("%s", infix); // prolly not a good idea - sscanf later
 
 	fgets(infix, 50, stdin);
 
-	char* temp1 = infix;
+	// end of main function
 
-	StackAsLinkedList* operators = stackInit();
-	QueueAsLinkedList* operands = queueInit();
+	char* delim = " ";
 
-	// print input buffer
-	while (*temp1) { // iterate through every character
+	char* token;
+	char* reset = infix;
+
+	// create ADTs
+
+	StackAsLinkedList* opStack = stackInit(); // operator stack
+	QueueAsLinkedList* opQueue = queueInit(); // operand queue
+
+	
+
+	// testing tokenizing and blind sort
+		
+	printf("\ntoken: \"%s\"\n", delim);
+	token = strtok(infix, delim);
+	// tokenizing string
+	while (token != NULL) {
+		printf("%s\n", token); // print token to be pushed/enqueued
+		if (isdigit(*token)) {
+			queueEnqueue(opQueue, *token);
+			queueEnqueue(opQueue, *token+1);
+			printf("digit\n");
+		} else {
+			stackPush(opStack, *token);
+		}
+		token = strtok(NULL, delim);
+	}
+
+	// print out ADTs
+	printf("operator stack:\n");
+	stackPrint(opStack);
+	printf("operand queue:\n");
+	queuePrint(opQueue);
+
+
+	free(infix);
+
+	deleteLinkedList(opStack);
+	deleteLinkedList(opQueue);
+	/*
+	// print to buffer to check good
+	printf("input buffer:\n");
+	while (temp1 != '\n') { // iterate through every character
 
 		printf("%c", *temp1);
 
@@ -42,9 +81,9 @@ int main(void) {
 
 	printf("\n");
 
-	// blind sort into stack and queue
+	// blind sort into stack and queue - ignoring order of operations, mixed numbers, etc
 	while (*temp1) { // iterate through every character
-		if (isdigit(*temp1) || ((*temp1 == '-' || *temp1 == '+') && isdigit(*(temp1 + 1)))) {
+		if (isdigit(*temp1) || ((*temp1 == '-' || *temp1 == '+') && isdigit(*(temp1 + 1)))) { // conditional looks for integers and converts from string into int
 			// Found a number
 			int val = strtol(temp1, &temp1, 10); // Read number
 			char valc[30];
@@ -73,7 +112,7 @@ int main(void) {
 	printf("output queue:\n");
 	queuePrint(operands);
 
-	double* postfix = malloc(51 * sizeof(double));
+	double* postfix = malloc(51 * sizeof(double)); // is this necessary? might have better luck with just keeping in adt and considering indiv nodes rather than dealing w string
 	double* temp2 = postfix;
 
 	while (!queueIsEmpty(operands)) { // while queue is not empty
@@ -105,60 +144,11 @@ int main(void) {
 	deleteLinkedList(operators);
 	deleteLinkedList(operands);
 
-	
-
-	/*
-	// stack test
-	
-	StackAsLinkedList * s = stackInit();
-	
-	if (stackIsEmpty(s))
-		printf("empty stack\n");
-
-	stackPush(s, 0);
-	stackPush(s, 1);
-	stackPush(s, 2);
-
-	stackPrint(s);
-	printf("stack has %d nodes\n", stackSize(s));
-	printf("top element: %lf\n", stackPeek(s));
-
-	if (!stackIsEmpty(s))
-		printf("not empty stack\n");
-
-	printf("popped: %lf\n", stackPop(s));
-	stackPrint(s);
-	printf("stack has %d nodes\n", stackSize(s));
-	printf("top element: %lf\n\n", stackPeek(s));
-	
-
-
-	// queue test
-
-	QueueAsLinkedList* q = queueInit();
-	
-	if (queueIsEmpty(q))
-		printf("empty queue\n");
-
-	queueEnqueue(q, 0.5);
-	queueEnqueue(q, 1.5);
-	queueEnqueue(q, 2.5);
-
-	queuePrint(q);
-	printf("queue has %d nodes\n", queueSize(q));
-	printf("front element: %lf\n", queuePeek(q));
-
-	if (!queueIsEmpty(q))
-		printf("not empty queue\n");
-
-	printf("dequeued: %lf\n", queueDequeue(q));
-	queuePrint(q);
-	printf("queue has %d nodes\n", queueSize(q));
-	printf("front element: %lf\n", queuePeek(q));
-	
-	
-	printf("%lf", mathPow(2, 3));
 	*/
+	
+
+
 
 	return 0;
 }
+ 
