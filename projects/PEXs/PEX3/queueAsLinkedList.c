@@ -20,11 +20,11 @@ void queueEnqueue(QueueAsLinkedList* queue, char* element) {
 
 char* queueDequeue(QueueAsLinkedList* queue) {
     char* elem = getElementLinkedList(queue, 0);
-    char* temp = malloc(10 * sizeof(char));
+    char* temp = calloc(64, sizeof(char));
     strcpy(temp, elem);
     deleteElementLinkedList(queue, 0);
     return temp;
-}
+} // printf("%s", queueDeque(queue));
 
 bool queueIsEmpty(QueueAsLinkedList* queue) {
     if (lengthOfLinkedList(queue) == 0) {
@@ -47,4 +47,8 @@ int queueSize(QueueAsLinkedList* queue) {
 
 void queuePrint(QueueAsLinkedList* queue) {
     printLinkedList(queue);
+}
+
+void queuePrintOut(QueueAsLinkedList* queue) {
+    printLinkedListOut(queue);
 }

@@ -91,3 +91,5 @@ int findElementLinkedList(LinkedList* list, char* element);
  * @param k - second node of data to be swapped
  */
 void swapData(Node* j, Node* k);
+
+void printLinkedListOut(LinkedList* list);

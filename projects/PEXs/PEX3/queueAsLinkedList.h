@@ -57,3 +57,8 @@ int queueSize(QueueAsLinkedList* queue);
  * @param queue - ptr to queue struct
  */
 void queuePrint(QueueAsLinkedList* queue);
+
+/** queuePrintOut() - outputs queue struct
+ * @param queue - ptr to queue struct
+ */
+void queuePrintOut(QueueAsLinkedList* queue);

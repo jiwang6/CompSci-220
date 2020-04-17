@@ -11,7 +11,7 @@
 #include "listAsLinkedList.h"
 
 LinkedList* createLinkedList() {
-    LinkedList* list = malloc(sizeof(LinkedList));
+    LinkedList* list = calloc(1, sizeof(LinkedList));
     list->head = NULL;
     list->tail = NULL;
     list->numberOfElements = 0;
@@ -32,7 +32,7 @@ void deleteLinkedList(LinkedList* list) {
 }
 
 void appendElementLinkedList(LinkedList* list, char* element) {
-    Node* newNode = malloc(sizeof(Node));
+    Node* newNode = calloc(1, sizeof(Node));
     strcpy(newNode->data, element);
     newNode->next = NULL;
 
@@ -74,7 +74,7 @@ char* getElementLinkedList(LinkedList* list, int position) {
 
 void deleteElementLinkedList(LinkedList* list, int position) {
     if (list->numberOfElements == 0 || list->numberOfElements <= position) {
-        printf("Error\n");
+        printf("Error in dELL\n");
         exit(0);
     }
 
@@ -109,7 +109,7 @@ void insertElementLinkedList(LinkedList* list, int position, char* element) {
         exit(0);
     }
 
-    Node* newNode = malloc(sizeof(Node));
+    Node* newNode = calloc(1, sizeof(Node));
     strcpy(newNode->data, element);
     newNode->next = NULL;
 
@@ -171,4 +171,12 @@ void swapData(Node * j, Node * k) {
     char* temp = j->data;
     strcpy(j->data, k->data);
     strcpy(k->data, temp);
+}
+
+void printLinkedListOut(LinkedList* list) {
+    Node* tempPtr = list->head;
+    while (tempPtr != NULL) {
+        printf("%s ", tempPtr->data);
+        tempPtr = tempPtr->next;
+    }
 }

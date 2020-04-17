@@ -17,7 +17,7 @@ void stackPush(StackAsLinkedList* stack, char* element) {
 char* stackPop(StackAsLinkedList* stack) {
     int elemPos = lengthOfLinkedList(stack)-1;
     char* elem = getElementLinkedList(stack, elemPos);
-    char* temp = malloc(10 * sizeof(char));
+    char* temp = calloc(64, sizeof(char));
     strcpy(temp, elem);
     deleteElementLinkedList(stack, elemPos);
     return temp;
