@@ -92,4 +92,7 @@ int findElementLinkedList(LinkedList* list, char* element);
  */
 void swapData(Node* j, Node* k);
 
+/**printLinkedList() - prints ll strucutre for RPN
+* @param list - ptr to ll
+*/
 void printLinkedListOut(LinkedList* list);

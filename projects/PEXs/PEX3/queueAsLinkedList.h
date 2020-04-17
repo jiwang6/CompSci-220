@@ -58,7 +58,7 @@ int queueSize(QueueAsLinkedList* queue);
  */
 void queuePrint(QueueAsLinkedList* queue);
 
-/** queuePrintOut() - outputs queue struct
+/** queuePrintOut() - outputs queue struct for RPN
  * @param queue - ptr to queue struct
  */
 void queuePrintOut(QueueAsLinkedList* queue);

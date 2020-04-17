@@ -1,4 +1,14 @@
-#include "shuntingAlgo.h"
+/** shuntingAlgo.h
+* ===========================================================
+* Name: Jim Wang 17 April 2020
+* Section: T2A
+* Project: PEX3
+* Purpose: Validate, interpret, and convert an infix 
+	expression to postfix.
+* ===========================================================
+*/
+
+#include "shuntingAlgo.h"	
 
 bool toRpn(char* infix, QueueAsLinkedList* outputQueue) {
 	char* token = calloc(256, sizeof(char));
@@ -6,16 +16,17 @@ bool toRpn(char* infix, QueueAsLinkedList* outputQueue) {
 	StackAsLinkedList* operatorStack = stackInit();
 
 	for (char* ptr = infix, *tmpPtr = NULL; *ptr != '\0'; ptr++) { // set pointer to infix start; until pointer hits end; increment by 1
-		token = calloc(256, sizeof(char)); // zero out token
+		char* token = calloc(256, sizeof(char)); // zero out token
 		while(*ptr == ' ') // skip space
 			ptr++;
-		if (lastWasOperator && (*ptr == '-' || isdigit(*ptr))) { // expecting number, handles numbers
+
+		if (lastWasOperator && (*ptr == '-' || isdigit(*ptr))) { // handles numbers
 			tmpPtr = ptr + 1; // look ahead
-			while ((!amIaMathOperator(*tmpPtr) || *tmpPtr == '/') && *tmpPtr != ' ' && *tmpPtr != '\0') // double digit numbers
+			while ((!mathOp(*tmpPtr) || *tmpPtr == '/') && *tmpPtr != ' ' && *tmpPtr != '\0') // double digit numbers
 				tmpPtr++; // move until tmpPtr hits end of number, most likely ' '
 			if (*tmpPtr == ' ' && isdigit(*(tmpPtr + 1))) { // handles mixed numbers
 				tmpPtr++; // moves to first digit of numberator
-				tmpPtr = strchr(tmpPtr, '/') + 1; // strstr(tmpPtr, '/') + 1 // finds address of '/'
+				tmpPtr = strchr(tmpPtr, '/') + 1; // finds address of '/'
 				while (isdigit(*tmpPtr)) // move until end of denom
 					tmpPtr++;
 			}
@@ -33,13 +44,8 @@ bool toRpn(char* infix, QueueAsLinkedList* outputQueue) {
 				lastWasOperator = true;
 			} else if (*ptr == ')') { 
 				while (!stackIsEmpty(operatorStack) && ('(' != (stackPeek(operatorStack)[0]))) { // empty or until it hits '(', whatever first
-					strcpy(token, stackPop(operatorStack)); // might be breaking here
+					strcpy(token, stackPop(operatorStack)); 
 					queueEnqueue(outputQueue, token);
-				}
-				
-				if ('(' != stackPeek(operatorStack)[0]) {
-					char* pH = stackPop(operatorStack);
-					free(pH);
 				}
 				
 				if (stackIsEmpty(operatorStack))
@@ -51,12 +57,13 @@ bool toRpn(char* infix, QueueAsLinkedList* outputQueue) {
 				int prec = precedence(token[0]);
 				char temp[2];
 				while (!stackIsEmpty(operatorStack) && (prec <= precedence(stackPeek(operatorStack)[0]))) { // pop into queue
-					strcpy(temp, stackPop(operatorStack)); // error shouldn't be enqueuing (
+					strcpy(temp, stackPop(operatorStack));
 					queueEnqueue(outputQueue, temp);
 				}
 				stackPush(operatorStack, token);
 			}		
 		} 
+		free(token);
 	}
 
 	// empty remaining stack into queue
@@ -67,8 +74,8 @@ bool toRpn(char* infix, QueueAsLinkedList* outputQueue) {
 	return true;
 }
 
-bool amIaMathOperator(char potOp) {
-	char arr[] = "*/+-^()";
+bool mathOp(char potOp) {
+	char arr[] = "*/+-^()"; // array of chars to be checked against
 
 	if (strchr(arr, potOp)) {
 		return true;
@@ -98,4 +105,39 @@ int precedence(char token) {
 			return -1;
 			break;
 	}
+}
+
+void preprocess(char* infix) {
+	for (int i = 0; infix[i] != '\0'; i++)
+	{
+		if (infix[i] == '\n')
+			infix[i] = '\0';
+	}
+}
+
+
+bool isValid(char* infix) { // error checking
+	int count1= 0, count2 = 0; // counts for parentheses
+	char arr[] = "*/+-^"; // array of operators not including ()
+
+
+	for (int i = 0; infix[i] != '\0'; i++)
+	{
+		if (infix[i] == '(')
+			count1++;
+		if (infix[i] == ')')
+			count2++;
+		if (!mathOp(infix[i]) && !isdigit(infix[i]) && infix[i] != ' ') // if anything not algebraic
+			return false;
+		if (infix[i] == '/' && infix[i + 1] == '-')
+			return false;
+	}
+
+	if (count1 != count2)
+		return false;
+
+	if ((infix[strlen(infix) - 1] == ' ') || strchr(arr,infix[strlen(infix) - 1] ))
+		return false;
+	
+	return true;
 }

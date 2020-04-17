@@ -12,16 +12,6 @@
 #include "stackAsLinkedList.h"
 #include "queueAsLinkedList.h"
 
-/* mixed num implementation for later
-typedef struct mixedNum {
-    int whole;
-    int num;
-    int denom;
-} mNum;
-
-mNum* getFraction();
-*/
-
 /** mathAdd() - adds two arguments
  * @param arg1 - first double to be added
  * @param arg2 - second double to be added
